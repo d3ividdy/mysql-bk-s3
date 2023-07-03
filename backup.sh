@@ -7,11 +7,11 @@ export AWS_ACCESS_KEY_ID=$S3_ACCESS_KEY_ID
 export AWS_SECRET_ACCESS_KEY=$S3_SECRET_ACCESS_KEY
 export AWS_DEFAULT_REGION=$S3_REGION
 
-echo "[MySQL-BK-S3-FTP]: Generate Dump File"
+echo "[MySQL-BK-S3]: Generate Dump File"
 
 mysqldump -h $MYSQL_HOST -P $MYSQL_PORT -u$MYSQL_USER -p$MYSQL_PASS $MYSQLDUMP_OPTIONS $MYSQLDUMP_DATABASE | gzip > $DUMP_FILE
 
-echo "[MySQL-BK-S3-FTP]: Upload to S3"
+echo "[MySQL-BK-S3]: Upload to S3"
 if [[ -z "${S3_FILE_NAME}" ]]; then
     S3_FILE_NAME=$FILE_TO_BK
 fi

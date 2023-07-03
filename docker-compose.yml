@@ -3,7 +3,7 @@ services:
   backup_data:
     #Dump Data Only
     container_name: backup_data
-    image: deividdy/mysql-bk-s3:latest
+    image: d3ividdy/mysql-bk-s3:latest
     environment:
       MYSQLDUMP_OPTIONS: "--default-character-set=utf8 --single-transaction=TRUE --routines --events --no-create-info=TRUE"
       MYSQLDUMP_DATABASE: bulla_dfe
@@ -21,7 +21,7 @@ services:
   backup_struct:
     #Dump Struct Only
     container_name: backup_struct
-    image: deividdy/mysql-bk-s3:latest
+    image: d3ividdy/mysql-bk-s3:latest
     environment:
       MYSQLDUMP_OPTIONS: "--default-character-set=utf8 --single-transaction=TRUE --no-data --skip-triggers"
       MYSQLDUMP_DATABASE: bulla_dfe

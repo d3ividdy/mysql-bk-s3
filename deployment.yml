@@ -2,7 +2,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: mysq-bk-s3-data
+  name: mysq-bk-s3
 spec:
   schedule: "0 0 * * *"
   jobTemplate:
@@ -11,8 +11,8 @@ spec:
         spec:
           restartPolicy: OnFailure
           containers:
-            - name: mysq-bk-s3-data
-              image: deividdy/mysql-bk-s3:latest
+            - name: mysq-bk-s3
+              image: d3ividdy/mysql-bk-s3:latest
               env:
               - name: MYSQLDUMP_OPTIONS
                 value: ""
